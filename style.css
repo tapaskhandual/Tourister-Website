@@ -1,0 +1,28 @@
+/* Extra layout rules for the updated features */
+.intro-pitch {
+    text-align: center;
+    padding: 60px 20px 20px 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.intro-pitch h2 {
+    font-size: 2rem;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.intro-pitch p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.feature-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+}
+
+@media (max-width: 480px) {
+    .feature-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
