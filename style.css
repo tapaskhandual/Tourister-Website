@@ -1,28 +1,167 @@
-/* Extra layout rules for the updated features */
+:root {
+    --primary: #0284c7;
+    --primary-dark: #0369a1;
+    --accent: #f0fdf4;
+    --accent-border: #bbf7d0;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --background: #fafafa;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-main);
+    background-color: var(--background);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Badge Alert style */
+.badge {
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Hero UI */
+.hero {
+    background: radial-gradient(100% 100% at 50% 0%, #f0f9ff 0%, #ffffff 100%);
+    padding: 100px 0 70px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: #0c4a6e;
+    margin-bottom: 20px;
+    letter-spacing: -1.5px;
+}
+
+.hero .tagline {
+    font-size: 1.35rem;
+    color: var(--text-muted);
+    max-width: 720px;
+    margin: 0 auto 35px auto;
+}
+
+/* Google Play Pill Button */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #0f172a;
+    color: white;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.download-btn:hover {
+    background-color: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(15, 23, 42, 0.25);
+}
+
+/* Pitch Section */
 .intro-pitch {
     text-align: center;
-    padding: 60px 20px 20px 20px;
-    max-width: 700px;
+    padding: 40px 24px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .intro-pitch h2 {
-    font-size: 2rem;
-    color: #0f172a;
+    font-size: 2.2rem;
+    font-weight: 800;
     margin-bottom: 15px;
+    letter-spacing: -0.5px;
 }
 
-.intro-pitch p {
-    font-size: 1.1rem;
-    color: var(--text-muted);
+/* Grid Layout */
+.features {
+    padding: 60px 0 100px 0;
 }
 
 .feature-grid {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 }
 
-@media (max-width: 480px) {
-    .feature-grid {
-        grid-template-columns: 1fr !important;
-    }
+.feature-card {
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+}
+
+.feature-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card .icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+}
+
+/* Footer Container */
+footer {
+    text-align: center;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    padding: 80px 24px;
+}
+
+footer h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #94a3b8 !important;
+    margin-top: 40px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .feature-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.8rem; }
+    .hero .tagline { font-size: 1.15rem; }
 }
